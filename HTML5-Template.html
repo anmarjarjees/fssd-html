@@ -1,0 +1,74 @@
+<!-- 
+    The "DOCTYPE" had to be the first item in the HTML document 
+    It is NOT an HTML tag. 
+    It tells the browser about the version of HTML this document uses. 
+    Always add the DOCTYPE declaration! 
+-->
+
+<!--  
+    Working with comments:
+    CTRL + / => show/hide (toggle) block comment 
+-->
+
+<!DOCTYPE html>
+<!-- 
+    The "lang" attribute is used to identify the language of text content on the web document 
+    English of Canada 
+
+    We are using the Canadian English: so we can add en-CA
+
+    Notice that -CA is optional
+ -->
+<html lang="en-CA">
+
+<head>
+    <!-- 
+        the element "meta" is short for "Metadata"
+        Metadata: is data that describes other data. 
+        The HTML content that you see in a browser window is data. 
+        But HTML can also contain metadata in its <head> element 
+        that describes the stuff you see on the browser. 
+        
+        For example: 
+        metadata can specify who wrote the document, 
+        and provide a list of keywords and phrases used in the document.
+
+        We can type this element in two different syntax:
+        - The classical way to write an empty element: <meta charset="utf-8" />
+        - The HTML5: <meta charset="utf-8">
+     -->
+    <meta charset="UTF-8">
+    <!-- 
+        charset="UTF-8"
+        charset="utf-8"
+            
+        UTF: Unicode Transformation Format 
+        UTF-8 (UCS Transformation Format 8) is the World Wide Web's most common 
+        character encoding. Each character is represented by one to four bytes. 
+
+        This ensures that you can use characters from just about any human language
+        in your HTML document, and they will display reliably.
+        -->
+
+    <!-- 
+                beside meta for charset we have other meta:
+        
+                meta name="viewport"
+                This meta data is used for Responsive Website (RWD: Responsive Web Design)  
+                as we will see in the future lectures 
+        
+                All meta element are written inside the <head></head>
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Title</title>
+</head>
+
+<body>
+    <!-- <body> element contains visible part of the webpage (the contents of our website):
+images, paragraphs, headings...
+
+So all the contents inside the body will be displayed in the browser. 
+-->
+</body>
+
+</html>
