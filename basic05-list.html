@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List</title>
+</head>
+
+<body>
+    <h1>Working with Lists</h1>
+
+    <!-- Using <br> is not recommended -->
+    HTML<br>
+    CSS<br>
+    JavaScript<br>
+    Python
+
+    <!-- 
+        Unordered List: <ul> 
+        it will be type="disc" by default
+    -->
+    <ul>
+        <!-- 
+            every list item needs to be inclosed by <li></li>
+         -->
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Python</li>
+    </ul>
+
+    <!-- Numerically ordered list -->
+    <!-- 
+        Ordered list ==> <ol> </ol>
+            type attribute with <ol> is still valid
+            but we can also style them with CSS like <ul>
+    -->
+    <ol>
+        <!-- 
+            every list item needs to be inclosed by <li></li>
+         -->
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Python</li>
+    </ol>
+    <hr>
+
+    <!-- 
+        Adding more features to our unordered list:
+        the symbol to be square
+
+        W3C Validator:
+        Error: The type attribute on the ul element is obsolete. Use CSS instead.
+
+        We will type attribute with ul just for learning (CSS later)
+     -->
+    <ul type="square">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Python</li>
+    </ul>
+
+    <ul type="circle">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Python</li>
+    </ul>
+
+    <hr>
+    <!-- 
+        Adding more features to our ordered list:
+
+        Using type attribute with ol element is valid (HTML5)
+        But we can also use CSS (recommended)
+     -->
+
+    <!-- Alphabetically uppercased ordered list -->
+    <ol type="A">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Python</li>
+    </ol>
+    <ol type="a">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Python</li>
+    </ol>
+
+    <!-- Order by roman numbers -->
+    <ol type="i">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Python</li>
+    </ol>
+    <ol type="I">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Python</li>
+    </ol>
+    <hr>
+    <!-- 
+        Definition List: <dl> </dl> 
+        Definition Term (title) <dt></dt>==> Example: HTML
+        The content of each title <dd></dd>
+    -->
+    <dl>
+        <dt>HTML:</dt>
+        <dd>
+            Video provides a powerful way to help you prove your point. When you click Online Video, you can paste in
+            the
+            embed code
+            for the video you want to add. You can also type a keyword to search online for the video that best fits
+            your
+            document.
+        </dd>
+        <dt>CSS:</dt>
+        <dd>
+            Video provides a powerful way to help you prove your point. When you click Online Video, you can paste in
+            the
+            embed code
+            for the video you want to add. You can also type a keyword to search online for the video that best fits
+            your
+            document.
+        </dd>
+        <dt>JavaScript:</dt>
+        <dd>
+            Video provides a powerful way to help you prove your point. When you click Online Video, you can paste in
+            the
+            embed code
+            for the video you want to add. You can also type a keyword to search online for the video that best fits
+            your
+            document.
+        </dd>
+    </dl>
+
+    <!-- Nested List: -->
+
+    <!-- Our first main ul that lists all the language -->
+    <ul>
+        <li>HTML:
+            <!-- 
+                Remember that this <ul> of the HTML topics belongs to the <li>HTML above
+                this ul element has to be a child for the above <li> element    
+                It has to embedded within the opening/closing li tag after the text
+                    
+                Otherwise: W3C Validator
+                Error: Element ul not allowed as child of element ul in this context.
+                    
+                in other word:
+                we cannot place ul inside another ul
+            -->
+            <ul>
+                <li>HTML Structure</li>
+                <li>Block-level and Inline </li>
+                <li>Relative and Absolute links</li>
+                <li>Valid and Obsolete Attribute </li>
+            </ul>
+        </li>
+
+        <li>CSS:
+            <ul>
+                <li>Internal CSS</li>
+                <li>Inline CSS</li>
+                <li>External CSS</li>
+            </ul>
+        </li>
+
+        <li>JavaScript:
+            <ul>
+                <li>Working with variables</li>
+                <li>Math Operations</li>
+                <li>Conditions</li>
+                <li>Loops</li>
+                <li>Functions</li>
+            </ul>
+        </li>
+        <li>Python</li>
+    </ul>
+</body>
+
+</html>

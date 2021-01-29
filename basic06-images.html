@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with Images</title>
+</head>
+
+<body>
+    <h1>Working with Images</h1>
+    <!-- 
+            <img>: is inline element and empty element (self-closed tag) 
+    
+            The 3 img types (extension) for the web:
+            .jpg 
+            .png
+            .gif
+    
+            NOT .psd or .bmp etc... 
+    
+            The img has three attributes:
+            src:
+            The src attribute stands for "source", 
+            and it has to be included. It tells the browser where to find an image. 
+            It contains the path to the image and the image file name
+    
+            alt: 
+            is a required attribute (short for alternative)
+            W3C (if missing)=> Error: An img element must have an alt attribute
+            
+            Two reasons for adding alt:
+            - screen reader software used by visually impaired users 
+              can read the alt description and provide a context for the image
+            - if the image cannot be loaded alt will give us an alternative text to be displayed
+    
+            title:
+            attribute (optional):
+        -->
+
+    <img src="code-01.png" alt="Code Institute Logo" title="The company logo">
+    <!-- 
+        Notice that img is an inline element, so we can embed the image inside a paragraph! 
+        img element has a width and height attribute
+
+        - avoid reduce/change the image dimensions using the attributes: width and height:
+        Reasons:
+        - if the actual image width is 1000px => and you change it to width = 500
+        this will not change the actual dimensions of the image, 
+        which means we are loading the 1000px to be displayed as 300px!!!
+        we should change the image width/height using a photo editor      
+
+        - avoid using width or height to make our image responsive
+    -->
+    <img src="code-01.png" alt="Code Institute Logo" title="The company logo" width="400">
+
+    <!-- since img is an inline element, we can place it inside p element -->
+    <p>Canadian Business College
+        <img src="https://canadianbusinesscollege.com/wp-content/uploads/2020/09/CBC-New-Logo-Website.png"
+            alt="CBC Logo">
+        <!-- We will add more :-) -->
+</body>
+
+</html>
