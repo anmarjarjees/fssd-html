@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iframe element</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <h2>Using iframe element</h2>
+        <p>iframe element is like a little window that has been cut into your page!!!
+            iframe can be used to place google map code, or a website, or can be used to place a youtube video code.
+        </p>
+        <!--
+                A <iframe> element embeds another web document (HTML page) within the current document:
+                It displays a web page within a web page
+        -->
+        <h2>Our Canadian Business College</h2>
+        <p>Below is our college website in this simple frame:</p>
+        <!--  
+            like img element, iframe needs to have the src="" 
+            Accessibility concerns
+            People navigating with assistive technology such as a screen reader 
+            can use the title attribute on an <iframe> to label its content. 
+            The title's value should concisely describe the embedded content:
+
+            W3C Validator: Error: Text not allowed in element iframe in this context.
+            Code Institute (LMS): this paragraph will appear if browser does not support iframes 
+            <p>Sorry, Your browser does not support iframe element!</p> 
+
+            W3C => Error: The frameborder attribute on the iframe element is obsolete. Use CSS instead. 
+        -->
+
+        <iframe src="https://canadianbusinesscollege.com/" frameborder="1" width="800" height="400">
+            <!-- this p element will not be visible if the browser supports iframe -->
+            <p>Sorry, Your browser does not support iframe element!</p>
+        </iframe>
+
+        <h2>Our Canadian Business College Video</h2>
+        <iframe width="700" height="450" src="https://www.youtube.com/embed/023DTcItxHw" frameborder="0"
+            allowfullscreen>
+            <p>Sorry, Your browser does not support iframe element!</p>
+        </iframe>
+
+        <h2>Our Canadian Business College Address/Map</h2>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11543.738392930554!2d-79.387232!3d43.67033!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x16b9020e485f9f8f!2sCanadian%20Business%20College%2C%20Toronto%20Campus!5e0!3m2!1sen!2sca!4v1612202571617!5m2!1sen!2sca"
+            width="600" height="450" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0">
+        </iframe>
+    </div>
+</body>
+
+</html>

@@ -35,7 +35,7 @@
             - if the image cannot be loaded alt will give us an alternative text to be displayed
     
             title:
-            attribute (optional):
+            attribute (optional): The text appears only when we hover the mouse over the image
         -->
 
     <img src="code-01.png" alt="Code Institute Logo" title="The company logo">
@@ -50,7 +50,9 @@
         which means we are loading the 1000px to be displayed as 300px!!!
         we should change the image width/height using a photo editor      
 
-        - avoid using width or height to make our image responsive
+        - avoid using "width" or "height" to make our image responsive
+        width or height will give an image a fixed size/dimensions
+        RWD => Responsive Web Design
     -->
     <img src="code-01.png" alt="Code Institute Logo" title="The company logo" width="400">
 
@@ -58,7 +60,40 @@
     <p>Canadian Business College
         <img src="https://canadianbusinesscollege.com/wp-content/uploads/2020/09/CBC-New-Logo-Website.png"
             alt="CBC Logo">
-        <!-- We will add more :-) -->
+    </p>
+    <!-- 
+        use the file coding.jpg inside folder "images"
+        using the actual width and height of the image file
+     -->
+    <img src="images/coding.jpg" alt="A group of programmers" width="1050" height="700">
+    <!-- 
+        Hints: 
+        - You can download Gimp (Free image editor) to modify your image:
+        - The link: https://www.gimp.org/
+
+        - You can check this page if you want to use some free images in your work: 
+        https://www.computerhope.com/issues/ch000845.htm
+    -->
+
+    <!--
+        for now we can use "align" attribute to align our images!
+        but then we should use CSS to style the image and never use align there are also two more attributes that we should not use: width: height:
+
+        align can have the following values: 
+        - left 
+        - right 
+        - middle
+        
+        W3C: Error: The align attribute on the img element is obsolete. 
+
+        Let's make it a hyperlink "Absolute Link"
+    -->
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur delectus expedita hic ut dolores nisi quisquam
+        a iusto eveniet obcaecati quibusdam quas omnis nulla in fuga, quae quos sapiente illum.
+        <a href="https://canadianbusinesscollege.com" target="_blank">
+            <img src="images/CBC-New-Logo-Website.png" alt="CBC logo" align="middle">
+        </a>
+    </p>
 </body>
 
 </html>
