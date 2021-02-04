@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility in HTML</title>
+</head>
+
+<body>
+    <header>
+        <!-- 
+    Accessibility in code is about making sure that anyone 
+    can understand your website regardless of auditory visual or physical abilities. 
+    
+    For general intro, you can check this link: 
+    https://www.w3schools.com/html/html_accessibility.asp
+
+    HTML has set of attributes that improve Accessibility called "ARIA" attributes
+    
+    For more about "ARIA", you can read: 
+    https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA
+    -->
+        <h1>Working with Accessibility Attributes</h1>
+        <!-- 
+        To provide information about what your links, icons and interactive elements are for, 
+        and further detail about how they behave, 
+        the "aria-label" attribute can be applied to them. 
+        The value for an aria-label is a string of text that labels the purpose and behaviour of the element. For example:
+     -->
+        <p>You can follow us:</p>
+        <a href="https://instagram.com/canadianbusinesscollege/" target="_blank"
+            aria-label="Visit CBC Instagram Home Page. Link will be opened in a new tab" data-label="Instagram">
+            Instagram
+        </a>
+
+        <h2>More Examples of ARIA</h2>
+        <!-- 
+        Example below from Code Institute - The Learning Management System (LMS)
+        https://codeinstitute.net/
+    -->
+        <nav>
+            <!-- Give your navigation links aria-labels -->
+            <a href="#home" aria-label="Go to the top of the page">
+                Home
+            </a>
+
+            <a href="#drinks" aria-label="Go to drinks menu section">
+                Drinks Menu
+            </a>
+
+            <a href="#contact" aria-label="Go to contact information section">
+                Contact
+            </a>
+
+            <a href="form.html" aria-label="Fill in our survey for your chance to win free coffee.">
+                Win Free Coffee
+            </a>
+        </nav>
+    </header>
+
+    <section>
+        <div>
+            <h2>Reasons to love us</h2>
+            <ol type="I">
+                <li>Free unlimited wifi</li>
+                <li>Charging outlets with every table</li>
+                <li>High quality coffee to fuel your code</li>
+            </ol>
+        </div>
+
+        <img src="https://codeinstitute.s3.amazonaws.com/HTMLEssentials/coders-coffeehouse-project-1.jpg"
+            alt="Cafe table with laptop and coffee" width="400">
+    </section>
+
+
+    <section id="drinks">
+        <h2>Drinks Menu</h2>
+
+        <div>
+            <h3>Coffee</h3>
+            <ul>
+                <li>Latte</li>
+                <li>Americano</li>
+                <li>Cappuccino</li>
+                <li>Espresso</li>
+                <li>Irish Coffee</li>
+                <li>Macchiato</li>
+                <li>Flat White</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Tea</h3>
+            <ul>
+                <li>Earl Grey</li>
+                <li>Green tea</li>
+                <li>Lemon tea</li>
+                <li>Peppermint tea</li>
+                <li>Ginger tea</li>
+                <li>Mint tea</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Cold drinks</h3>
+            <ul>
+                <li>Iced coffee</li>
+                <li>Ice Tea</li>
+                <li>Spring water</li>
+                <li>Soft drinks
+                    <ul>
+                        <li>Coca Cola</li>
+                        <li>Fanta</li>
+                        <li>7up</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+    <section id="contact">
+        <h2>Contact</h2>
+
+        <h3>Open times</h3>
+
+        <table>
+            <tr>
+                <th></th>
+                <th>Open</th>
+                <th>Close</th>
+            </tr>
+            <tr>
+                <td>Mon - Fri</td>
+                <td>09:00</td>
+                <td>21:00</td>
+            </tr>
+            <tr>
+                <td>Weekend</td>
+                <td>10:00</td>
+                <td>22:00</td>
+            </tr>
+        </table>
+
+        <h3>Get in touch</h3>
+
+        <div>
+            <span style="font-weight: bold;">Phone: </span>
+            <span>012 345 678 910</span>
+        </div>
+        <div>
+            <span style="font-weight: bold;">Email: </span>
+            <span>email@coderscoffeehouse.com</span>
+        </div>
+
+
+        <h3>Address</h3>
+        <p>Coders Coffeehouse,<br>42 Coffeebean street,<br>Dublin</p>
+    </section>
+
+
+    <section>
+        <h2>The aria-labelledby Attribute</h2>
+        <!-- 
+            The aria-labelledby attribute establishes relationships between objects and their labels.
+            The value given to the aria-labelledby attribute should be one or more element IDs,
+            which refer to elements that have the text needed for labelling.
+         -->
+        <div aria-labelledby="heading-one heading-two">
+            <h2 id="heading-one">First heading</h2>
+            <p>Paragraph text here...</p>
+            <h2 id="heading-two">Second heading</h2>
+            <p>More paragraph text here...</p>
+        </div>
+
+        <!-- 
+          The aria-labelledby attribute also works to label image-based elements 
+          in the same way that the for attribute works to label a form element.  
+
+          The value of the aria-labelledby attribute corresponds directly 
+          to the value of the id for the element or elements that describe it.
+
+          If you can use the aria-labelledby attribute on an <img> element, 
+          its alt attribute should be an empty value.
+
+          Example:
+         -->
+        <img src="diagram.png" alt="" aria-labelledby="diagram-description conclusion">
+        <p id="diagram-description">The diagram above shows ...</p>
+        <p id="conclusion">We can draw the following conclusions ...</p>
+        <!-- 
+            NOTE:
+            It is not necessary to use aria-label if aria-labelledby can be used,
+            if both are included screen readers will always give precedence to aria-labelledby.
+         -->
+        <hr>
+
+        <!-- 
+             Another example from Code Institute Below:
+          -->
+        <img src="https://codeinstitute.s3.amazonaws.com/HTMLEssentials/annie-easley.png" alt="Annie Easley"
+            aria-labelledby="easley-description">
+
+        <p id="easley-description">Annie Easley was an African-American computer scientist, mathematician, and rocket
+            scientist. She worked for the Lewis Research Center of the National Aeronautics and Space Administration and
+            its predecessor, the National Advisory Committee for Aeronautics.</p>
+    </section>
+
+    <footer>
+        <!-- Give your social media links aria-labels -->
+        <!-- 
+            Notice that the following links using this attribute: rel="noopener"
+            To learn more about this attribute, you can visit:
+            https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/noopener
+         -->
+        <span>Find us on:</span>
+        <a href="https://www.facebook.com" target="_blank" aria-label=" Find us on Facebook (link opens in a new tab)"
+            rel="noopener">
+            Facebook
+        </a>
+
+        <a href="https://www.instagram.com" target="_blank" aria-label=" Find us on Twitter (link opens in a new tab)"
+            rel="noopener">
+            Instagram
+        </a>
+
+        <a href="https://www.twitter.com" target="_blank" aria-label=" Find us on Instagram (link opens in a new tab)"
+            rel="noopener">
+            Twitter
+        </a>
+
+        <p>Copyright FSSD Program</p>
+
+    </footer>
+
+</html>

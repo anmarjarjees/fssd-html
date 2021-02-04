@@ -40,7 +40,9 @@
 
     <img src="code-01.png" alt="Code Institute Logo" title="The company logo">
     <!-- 
-        Notice that img is an inline element, so we can embed the image inside a paragraph! 
+        Notice that img is an inline element, which means it will share 
+        its horizontal space with other inline elements,
+        so we can embed the image inside a paragraph! 
         img element has a width and height attribute
 
         - avoid reduce/change the image dimensions using the attributes: width and height:
@@ -94,6 +96,42 @@
             <img src="images/CBC-New-Logo-Website.png" alt="CBC logo" align="middle">
         </a>
     </p>
+    <hr>
+    <!-- 
+        For displaying multiple images, we can use the <picture> element:
+        https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture
+
+        The HTML <picture> element contains:
+        - zero or more <source> elements
+        - one <img> element to offer alternative versions of an image for different display/device scenarios.
+
+        Notice that all IE versions don't support this element
+     -->
+    <picture>
+        <!-- 
+            The <source> element is a self-closing element; it does not need a closing tag.
+            It needs two important attributes: 
+            - srcset: defines the URL of the image to show
+            - media which accepts a media query
+            Examples:
+            media="(min-width: 800px)"
+            media="(max-width: 1000px)"
+
+            Media queries are used in responsive design 
+            to control what can be seen on different screen sizes. 
+         -->
+        <source srcset="images/coding.jpg" media="(min-width: 2000px)">
+        <source srcset="images/library.jpg" media="(min-width: 1024px)">
+        <source srcset="images/pc.jpg" media="(min-width: 500px)">
+        <!-- 
+            The <img> element:
+            - is required as the last child element of the <picture> element. 
+            - is used to provide backward compatibility for browsers 
+            that do not support the <picture> element, 
+            or if none of the <source> elements media queries are active
+        -->
+        <img src="images/light.jpg" alt="Light is on">
+    </picture>
 </body>
 
 </html>

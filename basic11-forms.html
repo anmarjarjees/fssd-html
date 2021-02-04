@@ -40,9 +40,48 @@
      -->
     <div class="wrapper">
         <!-- 
-            NOTE: Please this just the beginning of forms, will add more items tomorrow!
+            - Action attribute tells the browser where it should submit the form. 
+            will be "the file" or "URL address" on the server (localhost server in our examples) to handle the form request. 
+            
+            This file is written in a programming language like:
+            - PHP (the popular web programming language)
+            - Python + "Flask Framework" OR "Django Framework"
+            - Ruby
+            - C#
+            - JAVA
+            - etc…
+            
+            for just learning, we can use the formdump option from CI-LMS: https://formdump.codeinstitute.net
+
+            
+            - Method attribute tells the browser which HTTP method it should use to submit the form.
+            method="get" or method="post"
+            two main (common) types of methods that are used by PHP/Python when we submit the form:
+
+            - get or GET: (the default if you don’t specify)
+            * method="get" or method="GET" (The Default)
+            * is less secured (the info will be attached to the URL) 
+            because the data is appended to the URI
+            * can handle few data (simple forms)
+            * doesn't support file upload feature
+            * is usually used for the search form only
+            
+            - post or POST:
+            * method="post" or method="POST"
+            * is more secured (the info will be imbedded with the page) 
+            because the data are included in the body of the form
+            * can handle large amount of data (simple to more complex forms)
+            * supports file upload feature
+            * is used for contact us form, registration form, login from etc. (except search form)
          -->
-        <form action="???" method="???">
+        <form action="https://formdump.codeinstitute.net" method="POST">
+            <!-- 
+              HTML5 introduced new form elements that help organize content on the web page. 
+              <fieldset> groups related elements by drawing a box around any elements nested inside it.
+
+              The <fieldset> element is usually followed by a <legend> element, 
+              which defines a title for the <fieldset> element.  
+             -->
             <fieldset>
                 <legend>Contact and Personal Details</legend>
                 <!-- 
@@ -279,7 +318,11 @@
                         - value attribute: has to be unique for each radio button option, 
                         The value is not shown to the user, but it will be sent to the server when the form is submitted
     
-                        You can read more: https://www.w3schools.com/tags/att_input_type_radio.asp                 
+                        You can read more: https://www.w3schools.com/tags/att_input_type_radio.asp 
+                        
+                        Tip: 
+                        Always add the <label> tag for best accessibility practices!
+                        As it will be explained why below with checkboxes
                         -->
                     <input type="radio" name="comptype" checked="checked" value="desk">Desktop<br>
                     <input type="radio" name="comptype" value="lap">Laptop<br>
@@ -344,24 +387,24 @@
                             NOTE: We should always add the <label> tag for best accessibility practices
                          -->
                     <p>Please check the programming language(s) that you have studied or worked with:</p>
-                    <input type="checkbox" id="js" name="prog-lang">
+                    <input type="checkbox" id="js" name="prog-lang" value="js">
                     <label for="js">JavaScript</label>
-
-                    <input type="checkbox" id="py" name="prog-lang">
+                    <br>
+                    <input type="checkbox" id="py" name="prog-lang" value="py">
                     <label for="py">Python</label>
-
-                    <input type="checkbox" id="php" name="prog-lang">
+                    <br>
+                    <input type="checkbox" id="php" name="prog-lang" value="php">
                     <label for="php">PHP</label>
-
+                    <br>
                     <input type="checkbox" id="csharp" name="prog-lang">
                     <label for="csharp">C#</label>
-
+                    <br>
                     <input type="checkbox" id="java" name="prog-lang">
                     <label for="java">Java</label>
-
+                    <br>
                     <input type="checkbox" id="cplus" name="prog-lang">
                     <label for="cplus">C++</label>
-
+                    <br>
                     <input type="checkbox" id="swt" name="prog-lang">
                     <label for="swt">Swift</label>
                 </div>
@@ -432,8 +475,11 @@
                         <option value="Edge">
                     -->
                     <datalist id="browsers">
-                        <option value="Edge">
-                        <option value="Chrome">
+                        <!-- 
+                            We will use the two ways just for learning and see the difference
+                         -->
+                        <option value="Edge">Microsoft Edge</option>
+                        <option value="Chrome">Google Chrome</option>
                         <option value="Firefox">
                         <option value="Opera">
                         <option value="Safari">
@@ -442,8 +488,49 @@
                 </div>
             </fieldset>
 
-            <!-- To be continued -->
+            <!-- 
+                    At the end of the form we need to have 
+                    the submit option and reset
+                     -->
+            <!-- 
+                    the most commonly used way (Better):
+                -->
+            <input type="submit" value="Register" name="register">
+            <!-- To clear all the form fields: -->
+            <input type="reset" name="reset" value="Clear">
+            <hr>
+            <!-- 
+                We can put an image inside the submit button as a background
+                using type="image" with src="imageFileName.jpg" this became old fashion
+            -->
+            <input type="image" src="images/subscribe.jpg" alt="subscribe icon" name="register">
+            <!--  
+                instead of using input of type="submit"
+                we can use the <button> element to submit the form
+                but DON'T use both at the same time or at the same form
+    
+                Here we are using both just for testing
 
+                Please check this link for for details:
+                https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
+            -->
+            <button type="submit">
+                Submit
+            </button>
+
+            <!-- 
+                The difference between these two elements:
+                - <input type="submit" value="Register" name="register">
+                - <button type="submit">Submit</button>
+
+                <button type="submit"> element has a closing tag, 
+                you can put other elements inside it. Elements like spans, images or icons, for example. 
+                
+                Whereas an <input type="submit"> button can only hold plain text as it's value.
+             -->
+            <button>
+                <img src="images/add.gif" alt="add">Submit
+            </button>
         </form>
 
     </div>
