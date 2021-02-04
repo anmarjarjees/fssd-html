@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+
+<body>
+    <h2>Welcome to HTML form</h2>
+    <!-- 
+    Review:
+    We have two attributes to name/label any element:
+    - id
+    - class 
+    ================================================
+    id:
+    - id value cannot be duplicated (unique) in the same page
+    - The symbol for id is #
+    - This symbol is used with links and CSS
+    - # is the id symbol (we used this symbol # with hyperlinks and will be used in CSS)
+
+    class:
+    - class value can be used one as many times we need
+    - the symbol for class is .
+    - this symbol is used with CSS
+    - . is the class symbol (the dot symbol will be used in CSS)
+    -->
+
+    <!-- 
+        div wrapper will be the main div to contain our entire code (HTML elements)
+
+        div#wrapper ==> a div element that has id="wrapper"
+        div.wrapper ==> a div element that has class="wrapper"
+
+        Our div with class value of "wrapper"
+        <div class="wrapper">
+        </div>
+     -->
+    <div class="wrapper">
+        <!-- 
+            NOTE: Please this just the beginning of forms, will add more items tomorrow!
+         -->
+        <form action="???" method="???">
+            <fieldset>
+                <legend>Contact and Personal Details</legend>
+                <!-- 
+                We can use any block-level element to display the form fields in vertical way:
+                - div
+                - p
+                - ul and li
+                - br
+
+                We will use the div block-level element for now to make each form element take one line by itself
+             -->
+                <div>
+                    <!-- 
+                    "label" element has "for" attribute 
+                    the value of this attribute has to be the same value of its input id.
+                    
+                    Each label's "for" should have the same value as 
+                    its corresponding input's id 
+                -->
+                    <!-- The most commonly used way is using "for" with label -->
+                    <label for="first-name">First Name:*</label><br>
+                    <!-- 
+                    the "id" value it linked to the "for" value
+                    id="first-name":
+                    - to connect it with its label using for attribute
+                    - can be used to give this input element a unique style (using CSS)
+                    - can be used with JS or jQuery to target this element
+                    - or it can be used with hyperlink!
+
+                    name="first-name":
+                    - *To be used by the back-end developer with sever-side language
+                    to get the value of this field, so every input field must have the name attribute
+                    - can be used by CSS to style this element
+                    - can be used by JS to target this element
+
+                    we can use required = "required" for the old versions
+                    or we can just use required for HTML5
+
+                    the classical way: required="required"
+                    OR:
+                    the new HTML5 way: required
+                    
+                    maxlength ==> maximum number of characters
+
+                    we will use size="30" to change the input field width.
+                    instead of using size attribute we need to use CSS, 
+                    size="30" is an OLD WAY (but still valid),
+                    we will use CSS to style the width (better)
+                 -->
+                    <input type="text" id="first-name" name="first-name" required maxlength="30" size="30">
+                </div>
+                <div>
+                    <!-- 
+                    But we can also place the input element to be a child of its label element
+                        and we don't have to use for attribute 
+                -->
+                    <label>Last Name:*<br>
+                        <!-- 
+                        Below we used  id="last-name" in case to be used with CSS or JS
+                        You can use the value attribute for default input values => value="Simpsons" 
+                    -->
+                        <input type="text" id="last-name" required maxlength="30" size="30">
+                    </label>
+                </div>
+                <!-- 
+                Before HTML5 we used to have only: type="text" 
+                and it's still valid (no errors in validation)
+    
+                HTML5:
+                type="text" is the default one (the classical type)
+                Notice that all the below new listed attributes belong to HTML5:
+                type="email" ==> to write an email address
+                type="url" ==> to write a website address
+                type="tel" ==> to write a telephone number
+                type="date" ==> to write/insert the date (Calendar Icon)
+                type="number" ==> to put numbers only (Positive or negative)
+    
+                But with HTML5 we should use type="email" for these two main reasons:
+                - To have an email validation automatically and instantly (has to have @ and the . symbols)
+                - For the mobile users, so the keypad will be changed to show them the @ and .com for example  
+    
+                All the above new types work only with the modern and updated browsers that support HTML5. If the user opening a website with an old version browser (doesn’t support HTML5) they will be simply changed to type="text" as it used to be before HTML5
+           -->
+                <div>
+                    <label>Email:*<br>
+                        <!-- 
+                        any browser that supports HTML5 will validate the email
+                        the pattern must be anyText@anyText.anyText
+        
+                        With HTML5, we can also add the new attribute placeholder
+                        -->
+                        <input type="email" required placeholder="name@example.com" maxlength="40" size="30">
+                    </label>
+                </div>
+
+                <div>
+                    <label>
+                        Telephone:<br>
+                        <input type="tel" name="tel" placeholder="555-555-5555" size="30">
+                    </label>
+                </div>
+
+                <div>
+                    Personal Website:<br>
+                    <input type="url" name="website" placeholder="www.example.com" size="30">
+                </div>
+
+                <div>
+                    Date of Birth:
+                    <!-- 
+                Note: using placeholder with type="date" will give us error in validation
+                By default we will have the placeholder as: YYYY-MM-DD because of type="date" 
+                so it will be always fixed format based on our windows date and time settings. 
+                With Google Chrome, size="20" has no effect on input of type="date"
+
+                W3C Validator: Using placeholder attribute with input:date will give us an error:
+                Error: Attribute placeholder is only allowed when the input type is email, number, password, search, tel, text, or url.
+                -->
+                    <input type="date" name="birthdate" placeholder="YYYY-MM-DD" size="20"><br>
+                    Please fill the date using this format: YYYY-MM-DDD
+                </div>
+
+                <div>
+                    <label>
+                        How many computers do you have:
+                        <br>
+                        <!-- 
+                    we will use CSS to style the width of the input type=number 
+                    because size attribute also has no effect on input of type ="number"
+
+                        
+                    This number input field allows only numbers greater than or equal to 0
+                    and less than or equal to 6. 
+                    
+                    if you add the attribute step="2", 
+                    It will also prevent submitting any odd number in the same range.                   
+                    -->
+                        <input type="number" placeholder="0" name="comp" min="0" max="6">
+                    </label>
+                </div>
+
+                <div>
+                    <!-- 
+            HTML5 => type="color" => will create colorpicker component
+            which enables user to select and enter color code
+
+            W3C Validator will give us an error when we use "placeholder" attribute with color field:
+            Error: Attribute placeholder is only allowed when the input type is email, number, password, search, tel, text, or url.
+           -->
+                    <label for="color">Your favorite color:</label><br>
+                    <input type="color" id="color" name="color" placeholder="Your favorite color">
+                </div>
+
+                <div>
+                    <label for="volume">Your volume preferences</label>
+                    <input type="range" id="volume" min="0" max="10">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Registration/Login Information</legend>
+
+                <div>
+                    <label>Username:
+                        <input id="username" type="text" name="username" maxlength="15" size="20">
+                    </label>
+                </div>
+
+                <div>
+                    <label for="password1">Password</label>
+                    <!-- 
+        notice how type="password" hides
+        the characters when the user enters password 
+        -->
+                    <input type="password" id="password1" name="password1" maxlength="12" size="15">
+                </div>
+
+                <div>
+                    <label for="password2">Confirm Password</label>
+                    <input type="password" id="password2" name="password2" maxlength="12" size="15">
+                </div>
+
+                <div>
+                    <label for="aboutyou">Tell us about yourself:</label><br>
+                    <!-- 
+                    using textarea element to let the user type his code
+
+                    Old Classical Attributes (still valid):
+                    cols ==> number of columns ==> the width
+                    rows ==> number of rows ==> the hight
+                    -->
+                    <textarea name="aboutyou" id="aboutyou" cols="50" rows="10" placeholder="Write your contents here">
+                    </textarea>
+                </div>
+                <div>
+                    <label for="resume">Please upload your resume</label><br>
+                    Note: you can use the following formats: .doc, .docx, or .pdf
+                    <br>
+                    <!-- 
+                        Notes:
+                        - If the user needs to upload a file,
+                        the form "method" value has to be "POST" NOT "GET"
+                        because with GET method, we can't upload/send a file to the server
+
+                        - To submit (upload) multiple files, you can add the attribute "multiple"
+                        Example:
+                        <input type="file" name="file" multiple>
+                    -->
+                    <input type="file" name="resume" id="resume">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Personal Information</legend>
+                <div>
+                    What’s your most favourite computer type:
+                    <br>
+                    <!-- 
+                            the id attribute is "optional" for the following input fields
+                            because we don't have "for" attribute for the label
+    
+                        Radio Buttons:
+                        - At least one option (item) should be selected by default => checked attribute
+                        - User CANNOT select more than one (and only one) => name="all have the same value"
+    
+                        we can use:
+                        checked = "checked" (HTML4 and XHTML)
+                        OR just:
+                        checked (for new browsers that support HTML5)
+                
+                        in order for example "PHP/Python developers" to get the user values we use:
+                        - name attribute: (the value of the name attribute) must be the same for all radio options
+                        to be treated as a group.
+                        - value attribute: has to be unique for each radio button option, 
+                        The value is not shown to the user, but it will be sent to the server when the form is submitted
+    
+                        You can read more: https://www.w3schools.com/tags/att_input_type_radio.asp                 
+                        -->
+                    <input type="radio" name="comptype" checked="checked" value="desk">Desktop<br>
+                    <input type="radio" name="comptype" value="lap">Laptop<br>
+                    <input type="radio" name="comptype" value="all">All-in-one
+                </div>
+
+                <div>
+                    What's your favourite music?
+                    <br>
+                    <!-- 
+                            With checkbox, user can select one, all, or none
+                            
+                            By default, the data sent to the server from a checkbox that is checked is the value of on. 
+                            If you give the checkbox a value attribute, 
+                            the value you give this attribute is the value that will be sent to the server
+    
+                            NOTE:
+                            It's not mandatory or required to use the same value for the name attribute 
+                            for all the checkbox options (like radio buttons) 
+                            depending on the following real-world situations:
+    
+                            if checkboxes are completely unrelated, then you can just deal with them all separately,
+                            by giving each checkbox input a unique value for its "name" attribute.
+    
+                            if the checkboxes are all related so we should use the same value for all the "name" attributes 
+                            these values of the checked (selected) checkbox inputs will be sent to the server as a group of values
+                            Back-end programmers can deal with it as list (array)
+    
+                            Please check the following link for more details:
+                            https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#using_checkbox_inputs
+                         -->
+                    <input type="checkbox" name="music" value="rock" id="rock">
+                    <label for="rock">Rock</label>
+                    <br>
+                    <input type="checkbox" name="music" value="soft" id="soft">
+                    <label for="soft">Soft</label>
+                    <br>
+                    <input type="checkbox" name="music" value="jazz" id="jazz">
+                    <label for="jazz">Jazz</label>
+                    <br>
+                    <input type="checkbox" name="music" value="pop" id="pop">
+                    <label for="pop">Pop</label>
+                    <br>
+                    <input type="checkbox" name="music" value="rb" id="rb">
+                    <label for="rb">R & B</label>
+                    <br>
+                    <input type="checkbox" name="music" value="classic" id="classic">
+                    <label for="classic">Classic</label>
+                </div>
+
+                <div>
+                    <!-- 
+                            This is a another example of using checkbox input type => with p and labels for each input
+                            Using <label> element is important for two reasons:
+                            ***************************************************
+                            1- The <label> element is useful for screen-reader users, 
+                            the screen-reader will read out loud the label when the user focus on the input element.
+                            2- The <label> element also helps users who have difficulty clicking on very small regions
+                            (such as radio buttons or checkboxes) especially on small screens,
+                            when the user clicks the text within the <label> element, it toggles the radio button/checkbox.
+    
+                            NOTE: We should always add the <label> tag for best accessibility practices
+                         -->
+                    <p>Please check the programming language(s) that you have studied or worked with:</p>
+                    <input type="checkbox" id="js" name="prog-lang">
+                    <label for="js">JavaScript</label>
+
+                    <input type="checkbox" id="py" name="prog-lang">
+                    <label for="py">Python</label>
+
+                    <input type="checkbox" id="php" name="prog-lang">
+                    <label for="php">PHP</label>
+
+                    <input type="checkbox" id="csharp" name="prog-lang">
+                    <label for="csharp">C#</label>
+
+                    <input type="checkbox" id="java" name="prog-lang">
+                    <label for="java">Java</label>
+
+                    <input type="checkbox" id="cplus" name="prog-lang">
+                    <label for="cplus">C++</label>
+
+                    <input type="checkbox" id="swt" name="prog-lang">
+                    <label for="swt">Swift</label>
+                </div>
+
+                <div>
+                    <label for="campus"> Choose your CBC campus:</label>
+                    <select name="campus" id="campus">
+                        <option value="to">Toronto</option>
+                        <!-- 
+                                selected (Optional) ==> this option will be selected 
+                                when the page is first loaded 
+    
+                                if we don't specify, the first option will be selected by default
+                            -->
+                        <option value="ms" selected>Mississauga</option>
+                        <option value="sc">Scarborough</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="instruments"> How many instruments do you play?</label>
+                    <br>
+                    Note: Please use the CTRL (Windows) or COMMAND (MAC) to select multiple instruments<br>
+                    <!-- 
+                        We still need to add name attribute for the select element
+                       
+                        if you want the user to be able to select more than one option
+                        we need to add an attribute "multiple".
+    
+                        with "multiple" attribute, user can select more than one option
+                        USING the "CTRL" key in Windows or "COMMAND" key in Mac
+    
+                        multiple="multiple" or just type multiple
+                        size ==> for how many options we need to display
+    
+                        example:
+                        size="6" ==> 6 instruments will be
+                        -->
+                    <select name="instruments" id="instruments" multiple size="6">
+                        <option value="gu">Guitar</option>
+                        <option value="kb">Keyboard</option>
+                        <option value="dr">Drums</option>
+                        <option value="ba">Bass</option>
+                        <option value="sa">Sax</option>
+                        <option value="fl">flute</option>
+                        <option value="na">Not Available</option>
+                    </select>
+                </div>
+
+                <div>
+                    <!-- 
+                        The <datalist> element works in combination with an <input> element 
+                        to provide the user with possible options, 
+                        while still giving them the ability to type their own value into the input field.
+                     -->
+                    Please select your default browser:
+                    <input list="browsers" name="browser">
+                    <!--
+                        The <input> field and <datalist> are matched by their list
+                        and id attributes.
+
+                        NOTE:
+                        It's valid to use two different ways to list your option:
+                        - Way#1: By adding the closing/Ending option tag for each option
+                        <option value="Edge"></option>
+
+                        -Way#2: By just typing the opening/start option tag for each option
+                        <option value="Edge">
+                    -->
+                    <datalist id="browsers">
+                        <option value="Edge">
+                        <option value="Chrome">
+                        <option value="Firefox">
+                        <option value="Opera">
+                        <option value="Safari">
+                        <option value="Internet Explorer">
+                    </datalist>
+                </div>
+            </fieldset>
+
+            <!-- To be continued -->
+
+        </form>
+
+    </div>
+</body>
+
+</html>

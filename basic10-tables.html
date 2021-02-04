@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables</title>
+</head>
+
+<body>
+    <!-- Just for now we will use an obsolete (deprecated) attribute named "border"  -->
+    <h2>Simple HTML Table</h2>
+    <table border="1">
+        <tr>
+            <th colspan="5">ABC Advanced School</th>
+        </tr>
+        <tr>
+            <!-- 
+                This row contains the headings => <th></th> 
+
+                <th> ==> Bold and Centred aligned by default
+            -->
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Subject</th>
+            <th>Classroom</th>
+            <th>Time</th>
+        </tr>
+        <tr>
+            <td>Alex</td>
+            <td>Chow</td>
+            <td>Music</td>
+            <td>8</td>
+            <td>10 AM - 1 PM</td>
+        </tr>
+        <tr>
+            <td>Alexa</td>
+            <td>Chow</td>
+            <td>Math</td>
+            <td>9</td>
+            <td>10 AM - 1 PM</td>
+        </tr>
+        <tr>
+            <td colspan="5">You can register now!</td>
+        </tr>
+    </table>
+
+    <!-- 
+        Hint:
+        like <ul> or <ol> has <li>
+        same with table
+        every <tr> has either <td> or <th>
+     -->
+    <ul>
+        <li>Item1</li>
+        <li>Item2</li>
+        <li>Item3</li>
+    </ul>
+
+    <h2>Table in HTML5</h2>
+    <p>Please be advised that all these attributes are obsolete.</p>
+    <!-- 
+                With HTML5, Table element can include more elements:
+                HTML5 has introduced to us few new semantic elements for <table>
+                copy the entire table below:
+                we will keep all the obsolete attributes just for now    
+            -->
+    <table border="1">
+        <!-- HTML5 ==> table head ==> <thead> -->
+        <thead bgcolor="lightblue">
+            <tr>
+                <th colspan="5">ABC Advanced School</th>
+            </tr>
+            <tr>
+                <!-- 
+                This row contains the headings => <th></th> 
+
+                <th> ==> Bold and Centred aligned by default
+            -->
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Subject</th>
+                <th>Classroom</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+
+        <!-- HTML5 ==> Table body ==> <tbody> -->
+        <tbody bgcolor="lightyellow">
+            <tr>
+                <td>Alex</td>
+                <td>Chow</td>
+                <td>Music</td>
+                <td>8</td>
+                <td>10 AM - 1 PM</td>
+            </tr>
+            <tr>
+                <td>Alexa</td>
+                <td>Chow</td>
+                <td>Math</td>
+                <td>9</td>
+                <td>10 AM - 1 PM</td>
+            </tr>
+        </tbody>
+        <!-- HTML5 ==> Table Footer ==> <tfoot> -->
+        <tfoot bgcolor="lightgreen">
+            <tr>
+                <td colspan="5">You can register now!</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
+</html>
