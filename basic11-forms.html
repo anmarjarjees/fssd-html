@@ -112,8 +112,8 @@
                     - or it can be used with hyperlink!
 
                     name="first-name":
-                    - *To be used by the back-end developer with sever-side language
-                    to get the value of this field, so every input field must have the name attribute
+                    - *To be used by the back-end developer with a sever-side language
+                    to get the value of this field, so every input field MUST have the name attribute
                     - can be used by CSS to style this element
                     - can be used by JS to target this element
 
@@ -143,7 +143,7 @@
                         Below we used  id="last-name" in case to be used with CSS or JS
                         You can use the value attribute for default input values => value="Simpsons" 
                     -->
-                        <input type="text" id="last-name" required maxlength="30" size="30">
+                        <input type="text" id="last-name" name="last-name" required maxlength="30" size="30">
                     </label>
                 </div>
                 <!-- 
@@ -173,20 +173,21 @@
         
                         With HTML5, we can also add the new attribute placeholder
                         -->
-                        <input type="email" required placeholder="name@example.com" maxlength="40" size="30">
+                        <input type="email" required name="email" placeholder="name@example.com" maxlength="40"
+                            size="30">
                     </label>
                 </div>
 
                 <div>
                     <label>
                         Telephone:<br>
-                        <input type="tel" name="tel" placeholder="555-555-5555" size="30">
+                        <input type="tel" name="tel" name="tel" placeholder="555-555-5555" size="30">
                     </label>
                 </div>
 
                 <div>
                     Personal Website:<br>
-                    <input type="url" name="website" placeholder="www.example.com" size="30">
+                    <input type="url" name="website" name="website" placeholder="www.example.com" size="30">
                 </div>
 
                 <div>
