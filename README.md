@@ -4,8 +4,7 @@
 HTML Essentials Code Examples and Exercises with Comments for My Students - Full-Stack Software Developer Program
 
 ## References:
-- Code Institute | Full Stack Software Development Diploma - Python Essentials
-- Python Docs
+- Code Institute | Full Stack Software Development Diploma - HTML Essentials
 - Mozilla Developer Network (MDN) - Web Technologies For Developers - HTML
 - W3Schools
 - Please refer to my class materials and the pdf files for more details and explanations
